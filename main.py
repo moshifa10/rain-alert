@@ -11,13 +11,13 @@ lon = os.getenv(key="LON")
 lat = os.getenv(key="LAT")
 
 
-# parameter = {
-#     "lat": lat,
-#     "lon": lon,
-#     "appid": api_key
-# }
+parameter = {
+    "lat": lat,
+    "lon": lon,
+    "appid": api_key
+}
 
-response = requests.get(url=f"{ENDPOINT}?lat={lat}&lon={lon}&appid={api_key}")
+response = requests.get(url=ENDPOINT, params=parameter)
 
 response.raise_for_status()
 
